@@ -29,7 +29,7 @@ const ItemCount = () => {
                     <button type="button" onClick={() => modContador("+")} className="btn btn-primary">+</button>
                 </div>
 
-                <button type="button" onClick={() => onAdd(contador)} class="btn btn-primary">Agregar al carrito</button>
+                <button type="button" onClick={() => onAdd(contador)} className="btn btn-primary">Agregar al carrito</button>
             </div>
         </>
     );

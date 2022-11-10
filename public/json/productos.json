@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre": "Mouse Logitech G Pro Hero",
+        "marca": "Logitech",
+        "modelo": "G Pro Hero",
+        "categoria": "Mouse",
+        "img": "g-pro-hero.jpeg",
+        "precio": 6349,
+        "stock": 5
+    },
+    {
+        "id": 2,
+        "nombre": "Teclado Redragon Dragonborn K630",
+        "marca": "Redragon",
+        "modelo": "Dragonborn K630",
+        "categoria": "Teclado",
+        "img": "dragonborn-k630.jpg",
+        "precio": 10690,
+        "stock": 10
+    },
+    {
+        "id": 3,
+        "nombre": "Headset HyperX Cloud Core 7.1",
+        "marca": "HyperX",
+        "modelo": "Cloud Core 7.1",
+        "categoria": "Headset",
+        "img": "cloud-core-71.jpeg",
+        "precio": 16999,
+        "stock": 5
+    }
+]
