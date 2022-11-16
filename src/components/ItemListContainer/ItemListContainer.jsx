@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
 import { getProductos } from "../../assets/funciones";
-import { useLocation, useParams } from "react-router-dom";
+import { generatePath, useLocation, useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
     const [productos, setProductos] = useState([])
@@ -16,6 +16,9 @@ const ItemListContainer = ({ greeting }) => {
                 console.log(productList)
                 const cardProductos = ItemList({ productList })
                 setProductos(cardProductos)
+                const newPath = generatePath("/category/:category", {category: productList[0].categoria})
+                console.log(newPath)
+                window.history.replaceState(null, '', newPath)
             })
         } else {
             getProductos("./json/productos.json")
@@ -27,7 +30,12 @@ const ItemListContainer = ({ greeting }) => {
             })
         }
 
-    }, [location.pathname]);
+        
+
+    }, [location]);
+
+    // location.history.replace(newPath);
+
     return (
         <div className="row justify-content-evenly py-3">
             {productos}
