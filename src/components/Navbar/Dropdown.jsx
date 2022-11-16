@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Dropdown = () => {
     return (
         <li className="nav-item dropdown">
@@ -5,10 +7,10 @@ const Dropdown = () => {
                 Tienda
             </a>
             <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Componentes</a></li>
-                <li><a className="dropdown-item" href="#">Gabinetes</a></li>
+                <li><Link className='dropdown-item' to={`/category/1`} >Mouse</Link></li>
+                <li><Link className='dropdown-item' to={`/category/2`} >Teclado</Link></li>
                 {/* <li><hr className="dropdown-divider" /></li> */}
-                <li><a className="dropdown-item" href="#">Perifericos</a></li>
+                <li><Link className='dropdown-item' to={`/category/3`} >Headset</Link></li>
             </ul>
         </li>
     );

@@ -4,7 +4,7 @@ const Item = ({ prod }) => {
     return (
         <>
             <div className="card py-3" key={prod.id} style={{ width: '18rem' }}>
-                <img src={`./img/${prod.img}`} className="card-img-top" alt="imagen de producto" />
+                <img src={`../img/${prod.img}`} className="card-img-top" alt="imagen de producto" />
                 <div className="card-body">
                     <h5 className="card-title">{prod.nombre}</h5>
                     <p className="card-text">Precio: ${prod.precio}</p>
