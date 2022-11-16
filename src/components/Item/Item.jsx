@@ -15,7 +15,7 @@ const Item = () => {
                         <div className="card-body">
                             <h5 className="card-title">{prod.nombre}</h5>
                             <p className="card-text">Precio: ${prod.precio}</p>
-                            <button className="btn btn-primary"><Link className='nav-link' to={`/producto/${prod.id}`} >Ver Producto</Link></button>
+                            <button className="btn btn-primary"><Link className='nav-link' to={`/product/${prod.id}`} >Ver Producto</Link></button>
                         </div>
                     </div>
                 )
