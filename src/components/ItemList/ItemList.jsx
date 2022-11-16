@@ -1,9 +1,10 @@
 import Item from "../Item/Item";
-const ItemList = () => {
+const ItemList = ({ productos }) => {
     return (
-        <div className="row justify-content-evenly py-3">
-            <Item/>
-        </div>
+        <>
+            {productos.map(producto => <Item key={producto.id} prod={producto} />)}
+        </>
+
     );
 }
 

@@ -1,13 +1,22 @@
-import ItemCount from "../ItemCount/ItemCount";
+import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
+import { getProductos } from "../../assets/funciones";
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({ greeting }) => {
+    const [productos, setProductos] = useState([])
+
+    useEffect(() => {
+        getProductos("./json/productos.json")
+            .then(productos => {
+                const cardProductos = ItemList({productos})
+                setProductos(cardProductos)
+            })
+    }, []);
     return (
-        <>
-            <ItemList/>
-            {/* <ItemCount/> */}
-        </>
+        <div className="row justify-content-evenly py-3">
+            {productos}
+        </div>
     );
 }
 
