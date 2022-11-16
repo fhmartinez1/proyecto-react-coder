@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({producto}) => {
     const [contador, setContador] = useState(1);
 
     const modContador = (operacion) => {
         if (operacion === "+") {
-            if (contador < 10) //iria producto.stock cuando tenga stock
+            if (contador < producto.stock) //iria producto.stock cuando tenga stock
                 setContador(contador + 1);
         } else {
             if (contador > 1)
@@ -14,7 +14,7 @@ const ItemCount = () => {
     }
 
     const onAdd = (cantidad) => {
-        if (cantidad <= 10){ //iria producto.stock cuando tenga stock
+        if (cantidad <= producto.stock){ //iria producto.stock cuando tenga stock
             console.log(cantidad);
         } else {
             console.log("La cantidad supera al stock disponible")

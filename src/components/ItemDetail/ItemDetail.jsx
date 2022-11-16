@@ -28,7 +28,7 @@ const ItemDetail = ({ producto }) => {
                 </div>
             </div>
 
-            <ItemCount />
+            <ItemCount producto={producto} />
         </>
 
 
