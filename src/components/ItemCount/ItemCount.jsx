@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const ItemCount = ({producto}) => {
+const ItemCount = ({producto, onAdd}) => {
     const [contador, setContador] = useState(1);
 
     const modContador = (operacion) => {
@@ -13,13 +13,6 @@ const ItemCount = ({producto}) => {
         }
     }
 
-    const onAdd = (cantidad) => {
-        if (cantidad <= producto.stock){ //iria producto.stock cuando tenga stock
-            console.log(cantidad);
-        } else {
-            console.log("La cantidad supera al stock disponible")
-        }
-    }
     return (
         <>
             <div className="container justify-items-center">

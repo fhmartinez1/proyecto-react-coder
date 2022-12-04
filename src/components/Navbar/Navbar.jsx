@@ -3,8 +3,9 @@ import './navbar.css';
 import FormBusqueda from './FormBusqueda';
 import Dropdown from './Dropdown';
 import CartWidget from '../CartWidget/CartWidget';
+import React from 'react';
 
-const Navbar = () => {
+const Navbar = React.memo(() => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -28,6 +29,6 @@ const Navbar = () => {
             </nav>
         </>
     );
-}
+})
 
 export default Navbar;
