@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
-import { getProductos } from "../../assets/funciones";
+import { getProductos } from "../../assets/firebase";
 import { generatePath, useLocation, useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
@@ -9,7 +9,7 @@ const ItemListContainer = ({ greeting }) => {
     const location = useLocation()
     useEffect(() => {
         if(category){
-            getProductos("../json/productos.json")
+            getProductos()
             .then(products => {
                 const productList = products.filter(prod => prod.idCategoria === parseInt(category))
                 const cardProductos = ItemList({ productList })
@@ -18,7 +18,7 @@ const ItemListContainer = ({ greeting }) => {
                 window.history.replaceState(null, '', newPath)
             })
         } else {
-            getProductos("./json/productos.json")
+            getProductos()
             .then(productList => {
                 const cardProductos = ItemList({ productList })
                 setProductos(cardProductos)
