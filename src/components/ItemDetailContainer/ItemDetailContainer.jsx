@@ -19,13 +19,23 @@ const ItemDetailContainer = () => {
         // }
         // waitForProduct()
 
-        getProducto(id).then(prod => {setProducto(prod)})
+        getProducto(id).then(prod => { setProducto(prod) }).catch()
     }, []);
 
     return (
-        <div>
-            <ItemDetail producto={producto} />
-        </div>
+        <>
+            {producto !== undefined ?
+                <div>
+                    <ItemDetail producto={producto} />
+                </div>
+                :
+                <div className="container-md text-align-center py-4">
+                    <h1>Producto no encontrado</h1>
+                </div>
+                
+            }
+        </>
+
     );
 }
 

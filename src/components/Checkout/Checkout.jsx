@@ -1,32 +1,74 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from "../../context/CartContext";
+import { createOrden } from '../../assets/firebase';
+import { toast } from 'react-toastify';
 
 const Checkout = () => {
+    const { cart, totalPrice, emptyCart } = useContext(CartContext)
+    let navigate = useNavigate()
+
+    const formCompra = React.useRef()
+    const consultarForm = (e) => {
+        e.preventDefault()
+        const formData = new FormData(formCompra.current)
+        const formArray = Object.fromEntries(formData)
+
+        if(formArray.email === formArray.emailConfirm){
+            if (cart.length !== 0) {
+                createOrden(formArray, totalPrice()).then(orden => {
+                    toast(`Se genero la compra ${orden.id}`)
+                    emptyCart()
+                    navigate("/")
+                    e.target.reset()
+                }).catch(error => {
+                    toast.error("Su compra no se genero correctamente")
+                    console.log(error)
+                })
+            } else {
+                toast.error("El carrito esta vacío.")
+            }
+        } else {
+            toast.error("Las direcciones de correo deben coincidir.")
+        }
+    }
+
     return (
-        <div className='container-md py-3'>
-            <div class="mb-3">
-                <label for="formCompraNombre" class="form-label">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="formCompraNombre"/>
+        <>
+            <div className="container-md py-3">
+                <form onSubmit={consultarForm} ref={formCompra}>
+                    <div className="mb-3">
+                        <label htmlFor="formCompraNombre" className="form-label">Nombre y Apellido</label>
+                        <input type="text" className="form-control" name="nombre" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="formCompraEmail" className="form-label">Email</label>
+                        <input type="email" className="form-control" name="email" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="formCompraEmail" className="form-label">Confirmar Email</label>
+                        <input type="email" className="form-control" name="emailConfirm" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="formCompraDni" className="form-label">DNI</label>
+                        <input type="number" className="form-control" name="dni" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="formCompraTelefono" className="form-label">Telefono</label>
+                        <input type="number" className="form-control" name="telefono" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="formCompraDireccion" className="form-label">Dirección</label>
+                        <input type="text" className="form-control" name="direccion" />
+                    </div>
+                    <div className="py-3">
+                        <button type='submit' className='btn btn-primary'>Finalizar compra</button>
+                    </div>
+                    
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="formCompraEmail" class="form-label">Nombre y Apellido</label>
-                <input type="email" class="form-control" id="formCompraEmail"/>
-            </div>
-            <div class="mb-3">
-                <label for="formCompraDni" class="form-label">DNI</label>
-                <input type="number" class="form-control" id="formCompraDni"/>
-            </div>
-            <div class="mb-3">
-                <label for="formCompraTelefono" class="form-label">Telefono</label>
-                <input type="number" class="form-control" id="formCompraTelefono"/>
-            </div>
-            <div class="mb-3">
-                <label for="formCompraDirección" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="formCompraDirección"/>
-            </div>
-            <div class="mb-3 py-3">
-                <button className='btn btn-primary'>Finalizar Compra</button>
-            </div>
-        </div>
+        </>
     );
 }
 

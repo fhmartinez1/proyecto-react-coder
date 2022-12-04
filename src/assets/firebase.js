@@ -53,7 +53,7 @@ const getProducto = async (id) => {
   if (docSnap.exists()) {
     return item
   } else {
-    console.log("Producto no encontrado.")
+    return undefined
   }
 
 }

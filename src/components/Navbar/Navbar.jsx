@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './navbar.css';
-import FormBusqueda from './FormBusqueda';
 import Dropdown from './Dropdown';
 import CartWidget from '../CartWidget/CartWidget';
 import React from 'react';
@@ -22,7 +21,6 @@ const Navbar = React.memo(() => {
                             </li>
                             <Dropdown />
                         </ul>
-                        <FormBusqueda busqueda={"Modelo, marca, etc..."} />
                     </div>
                     <CartWidget />
                 </div>

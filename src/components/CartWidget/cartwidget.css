@@ -2,3 +2,24 @@
     border: 0;
     background-color: transparent;
 }
+
+.widget-icon {
+    position: static;
+}
+
+.widget-number {
+    background-color: darkviolet;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    font-weight: 400;
+    width: 25px;
+    border-radius: 50px;
+    position: fixed;
+    margin-left: 25px;
+    margin-top: -10px;
+}
+
+.widget-container {
+    position: relative;
+}

@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
-import Cart from "../Cart/Cart";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ producto }) => {
 
-    const {cart, isInCart, addItem} = useContext(CartContext)
+    const { cart, isInCart, addItem } = useContext(CartContext)
 
     const onAdd = (contador) => {
         addItem(producto, contador)
@@ -27,6 +27,10 @@ const ItemDetail = ({ producto }) => {
                                     <p className="card-text">Marca: {producto.marca}</p>
                                     <p className="card-text">Modelo: {producto.modelo}</p>
                                     <p className="card-text"><small className="text-muted">Cantidad en stock: {producto.stock}</small></p>
+                                    <ItemCount producto={producto} onAdd={onAdd} />
+                                    <div className="container py-3">
+                                        <Link to={'/checkout'}><button className="btn btn-secondary">Finalizar Compra</button></Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +38,7 @@ const ItemDetail = ({ producto }) => {
                 </div>
             </div>
 
-            <ItemCount producto={producto} onAdd={onAdd}/>
+
         </>
 
 

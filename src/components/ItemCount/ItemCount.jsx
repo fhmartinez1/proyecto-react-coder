@@ -15,8 +15,8 @@ const ItemCount = ({producto, onAdd}) => {
 
     return (
         <>
-            <div className="container justify-items-center">
-                <div className="btn-group me-2 justify-items-center" role="group" aria-label="Count group">
+            <div className="container justify-content-center">
+                <div className="btn-group me-2 justify-content-center" role="group" aria-label="Count group">
                     <button type="button" onClick={() => modContador("-")} className="btn btn-primary">-</button>
                     <button type="button" className="btn btn-primary disabled px-4">{contador}</button>
                     <button type="button" onClick={() => modContador("+")} className="btn btn-primary">+</button>
