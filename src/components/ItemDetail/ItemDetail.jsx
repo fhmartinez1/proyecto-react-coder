@@ -18,7 +18,7 @@ const ItemDetail = ({ producto }) => {
                     <div className="card mb-3" style={{ maxWidth: '540px' }}>
                         <div className="row g-0">
                             <div className="col-md-4">
-                                <img src={`../img/${producto.img}`} className="img-fluid rounded-start" alt="imagen de producto" />
+                                <img src={producto.img} className="img-fluid rounded-start" alt="imagen de producto" />
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body">

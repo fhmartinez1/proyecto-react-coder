@@ -19,7 +19,7 @@ const Cart = () => {
                         <div className="card px-2" key={prod.id} style={{ width: '18rem' }}>
                             <div className="row g-0 align-items-center">
                                 <div className="col-md-4 ">
-                                    <img src={`../img/${prod.img}`} className="img-fluid rounded-start" alt="..." />
+                                    <img src={prod.img} className="img-fluid rounded-start" alt="..." />
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body">

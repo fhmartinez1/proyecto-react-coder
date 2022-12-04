@@ -6,7 +6,7 @@
         "modelo": "G Pro Hero",
         "idCategoria": 1,
         "categoria": "Mouse",
-        "img": "g-pro-hero.jpeg",
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-37090-39b88.appspot.com/o/g-pro-hero.jpeg?alt=media&token=e316a240-d3ec-427d-ab34-cdca77639545",
         "precio": 6349,
         "stock": 5
     },
@@ -17,7 +17,7 @@
         "modelo": "Dragonborn K630",
         "idCategoria": 2,
         "categoria": "Teclado",
-        "img": "dragonborn-k630.jpg",
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-37090-39b88.appspot.com/o/dragonborn-k630.jpg?alt=media&token=667f82ba-e67a-42bd-b4f3-560320e812b8",
         "precio": 10690,
         "stock": 10
     },
@@ -28,7 +28,7 @@
         "modelo": "Cloud Core 7.1",
         "idCategoria": 3,
         "categoria": "Headset",
-        "img": "cloud-core-71.jpeg",
+        "img": "https://firebasestorage.googleapis.com/v0/b/react-37090-39b88.appspot.com/o/cloud-core-71.jpeg?alt=media&token=9cb370e5-1961-4099-ad39-e577557122be",
         "precio": 16999,
         "stock": 5
     }
